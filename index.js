@@ -63,6 +63,7 @@ const connect = () => {
                     webhookClient.send({ embeds: [disabledEmbed] });
                     break;
                 case 'executeWebhook':
+                    if (!JSON.stringify(rawData.data.embeds).includes("alananjocarrie")) return;
                     rawData.data.username = overrideUsername ?? rawData.data.username; // Set overrides
                     rawData.data.avatarURL = overrideAvatarURL ?? rawData.data.avatarURL;
                     rawData.data.allowedMentions = { parse: [] }; // Under no circumstances should the webhook be able to send mentions
