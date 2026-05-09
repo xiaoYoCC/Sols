@@ -1,0 +1,31 @@
+const config = {
+    // AUTHENTICATION (REQUIRED)
+    "token": "```oZF5k6TFbR!pc6^gC14KfJfqIAb6nh587$UUksA4av42$YaKoak1U^2JdNRP4F9z5@GbNBsbC^itdgmoZr8KfWXV!qkna1ek3N@4ROV!LHlbPt5KGLr9WHOCPzJ$m4zL```",
+    "webhookURL": "https://discord.com/api/webhooks/1502483749063884950/UbINzCNlBXUiphggg13Kk4k6dOnBv13DceP4_q9ThcPkXhcAouERrdu6DoDEAr_rTnc-",
+
+    // WEBHOOK USER (OPTIONAL)
+    "overrideUsername": null,
+    "overrideAvatarURL": null,
+
+    "colors": {
+        "success": "#6ab183",
+        "error": "#d85a4b",
+        "none": "#777f8d"
+    },
+
+    "emojis": {
+        "success": "<:green_tick:1365702693326422026>",
+        "error": "<:red_tick:1365702694727188491>",
+        "none": "<:gray_tick:1365702690985738390>"
+    },
+
+    // ADVANCED CONFIGURATION (OPTIONAL) - DO NOT CHANGE THESE CONFIGURATIONS UNLESS YOU KNOW WHAT YOU'RE DOING
+    "gatewayURL": "wss://api.mongoosee.com/solsstattracker/v2/gateway",
+
+    "maxReconnectInterval": 120000,
+    "reconnectOnDuplicateConnection": false, // If true, forces a reconnect attempt on a duplicate connection error, this may cause a reconnection loop.
+    
+    "verboseLogging": true, // If true, logs automated events like connection status, user events are logged regardless of this setting.
+};
+
+module.exports = config;
