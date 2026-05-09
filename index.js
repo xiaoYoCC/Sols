@@ -63,12 +63,21 @@ const connect = () => {
                     webhookClient.send({ embeds: [disabledEmbed] });
                     break;
                 case 'executeWebhook':
-                    if (!JSON.stringify(rawData?.data?.embeds || "").includes("alananjocarrie")) return;
-                    rawData.data.username = overrideUsername ?? rawData.data.username; // Set overrides
-                    rawData.data.avatarURL = overrideAvatarURL ?? rawData.data.avatarURL;
-                    rawData.data.allowedMentions = { parse: [] }; // Under no circumstances should the webhook be able to send mentions
+                    // --- 終極保險過濾法 ---
+                    try {
+                        const messageString = JSON.stringify(rawData.data || {});
+                        if (!messageString.includes("alananjocarrie")) {
+                            return; 
+                        }
+                    } catch (err) {
+                        // 如果過濾出錯，就直接讓它通過，保證機器人不崩潰
+                    }
+                    // --------------------
 
-                    webhookClient.send(rawData.data); // Send the message payload
+                    rawData.data.username = overrideUsername ?? rawData.data.username;
+                    rawData.data.avatarURL = overrideAvatarURL ?? rawData.data.avatarURL;
+                    rawData.data.allowedMentions = { parse: [] };
+                    webhookClient.send(rawData.data);
                     break;
                 default:
                     console.error(`ID: ${webhookClient.id} | WS client invalid action: ${rawData.action}`);
