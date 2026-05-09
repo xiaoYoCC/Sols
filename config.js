@@ -1,9 +1,7 @@
 const config = {
     // AUTHENTICATION (REQUIRED)
-    "token": "mCb21zN280!X2kPSBDI4u4hj3&GkCv2qE4oHYXjy5IVTiPpgRNDHtO7#Hf0P0jWB9$zDI!X8oQjjLwBd^kPQo7nvbl98^V7j7zQtLFxIhP!Ep5$QgEY!ZYMKLdCCLb$O",
+    "token": "Tr924i9rjvU@jpK^J1b&TWoTTY8UqggMB9s4mP1Eq!YS#Y*PnY7YTJbHeIfEqNTmKQ&e7IPLMsfmSWoAJrfiOn*nr4CMoQIxo3GLb#@vpl0rzlKfUCdunmaH2b^lcxWE",
     "webhookURL": "https://discord.com/api/webhooks/1502483749063884950/UbINzCNlBXUiphggg13Kk4k6dOnBv13DceP4_q9ThcPkXhcAouERrdu6DoDEAr_rTnc-",
-
-"targetUserId": "alananjocarrie",
 
     // WEBHOOK USER (OPTIONAL)
     "overrideUsername": null,
