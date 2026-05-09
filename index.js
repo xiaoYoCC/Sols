@@ -63,11 +63,19 @@ const connect = () => {
                     webhookClient.send({ embeds: [disabledEmbed] });
                     break;
                 case 'executeWebhook':
-                    rawData.data.username = overrideUsername ?? rawData.data.username; // Set overrides
-                    rawData.data.avatarURL = overrideAvatarURL ?? rawData.data.avatarURL;
-                    rawData.data.allowedMentions = { parse: [] }; // Under no circumstances should the webhook be able to send mentions
+                    // --- 簡易過濾器：只發送包含你 ID 的訊息 ---
+                    if (config.targetUserId && rawData.data.embeds && rawData.data.embeds[0]) {
+                        const content = JSON.stringify(rawData.data.embeds[0]);
+                        // 如果公告內容裡沒有你的 ID，就直接跳過
+                        if (!content.includes(config.targetUserId.toString())) {
+                            return; 
+                        }
+                    }
 
-                    webhookClient.send(rawData.data); // Send the message payload
+                    rawData.data.username = overrideUsername ?? rawData.data.username;
+                    rawData.data.avatarURL = overrideAvatarURL ?? rawData.data.avatarURL;
+                    rawData.data.allowedMentions = { parse: [] };
+                    webhookClient.send(rawData.data);
                     break;
                 default:
                     console.error(`ID: ${webhookClient.id} | WS client invalid action: ${rawData.action}`);
