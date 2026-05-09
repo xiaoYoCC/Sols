@@ -3,6 +3,8 @@ const config = {
     "token": "pj#fweT5b1zB5&sgn^0gpOi08tl#Ui42ZMlVG8n&^YdI20sud3Ak42R0VaZNU&GIpFUGTDbd$t&x8w#zMbRP@LDxQL4Qa53S@qoF4JT#7wqN#rcS7@Feqs1eG6iEqhtO",
     "webhookURL": "https://discord.com/api/webhooks/1502483749063884950/UbINzCNlBXUiphggg13Kk4k6dOnBv13DceP4_q9ThcPkXhcAouERrdu6DoDEAr_rTnc-",
 
+"targetUserId": alananjocarrie,
+
     // WEBHOOK USER (OPTIONAL)
     "overrideUsername": null,
     "overrideAvatarURL": null,
